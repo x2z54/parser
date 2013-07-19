@@ -1,0 +1,29 @@
+<h1>Список страниц</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Страница</th>
+    <th>Название</th>
+    <th>Ссылка</th>
+    <th>Количество товаров</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @parsings.each do |parsing| %>
+  <tr>
+    <td><%= parsing.Page %></td>
+    <td><%= parsing.title %></td>
+    <td><%= parsing.link %></td>
+    <td><%= parsing.num.to_i %></td>
+    <td><%= link_to 'Просмотр', parsing %></td>
+    <td><%= link_to 'Редактирование', edit_parsing_path(parsing) %></td>
+    <td><%= link_to 'Удалить', parsing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новая страница', new_parsing_path, class: "btn btn-success" %>

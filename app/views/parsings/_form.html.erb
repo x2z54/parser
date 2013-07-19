@@ -1,0 +1,33 @@
+<%= form_for(@parsing) do |f| %>
+  <% if @parsing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@parsing.errors.count, "error") %> prohibited this parsing from being saved:</h2>
+
+      <ul>
+      <% @parsing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p>Номер страницы</p>
+    <%= f.text_field :Page %>
+  </div>
+  <div class="field">
+    <p>Название товара</p>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <p>Ссылка на страницу</p>
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <p>Количество товаров на странице</p>
+    <%= f.text_field :num %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Создать страницу", class: "btn btn-primary" %>
+  </div>
+<% end %>

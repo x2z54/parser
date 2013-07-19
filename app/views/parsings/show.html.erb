@@ -1,0 +1,31 @@
+
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Страница:</b>
+  <%= @parsing.Page %>
+</p>
+
+<p>
+  <b>Название:</b>
+  <%= @parsing.title %>
+</p>
+
+<p>
+  <b>Ссылка:</b>
+  <%= @parsing.link %>
+</p>
+
+
+<p>
+  <b>Содержимое страницы:</b>
+  <br>
+  <%= @string.html_safe%>
+</p>
+
+
+<div class = "span3">
+<%= link_to 'Назад', parsings_path, class: "btn btn-danger", style: "float:right" %>
+</div>
+</div>
